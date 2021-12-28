@@ -19,8 +19,3 @@ print("price to be paid by " + name_3 + "is " +str (price_of_name_3))
 result= float(price_of_name_1) + float(price_of_name_2) + float(price_of_name_3)
 
 print("TOTAL AMOUNT TO BE PAID " + str(result))
-
-
-
-
-
