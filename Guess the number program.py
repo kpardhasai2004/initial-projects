@@ -15,3 +15,4 @@ result=((((float(x_1)/2)*3)+122)-330)
 result_1=round(result)
 
 print("The number you have choosen is : " + str(result_1))
+
