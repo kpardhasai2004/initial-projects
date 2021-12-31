@@ -1,2 +1,2 @@
-# first-project
+# initial-projects
 Add file
