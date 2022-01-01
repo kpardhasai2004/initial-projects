@@ -59,3 +59,4 @@ def crypted(sentence):
     return translation
 
 print(crypted(input("What do you want to crypt: ")))
+
