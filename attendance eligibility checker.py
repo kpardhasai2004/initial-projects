@@ -33,3 +33,4 @@ else :
     print("studet name : "+ name)
     print("student Reg_no : " + reg)
     print("status: not eligible to attend exam")
+    
