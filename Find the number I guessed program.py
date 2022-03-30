@@ -1,7 +1,8 @@
 import random
-
+game_complete = False
 def guessit():
     global attempts
+    global game_complete
     guess=int(input("Now guess the number: "))
     if guess==cn:
         print("You won!")
@@ -25,13 +26,13 @@ if req_level=="easy":
 elif req_level=="hard":
     attempts=5
 # print(attempts)
-game_complete = False
 while not game_complete:
     if attempts>0:
         guessit()
     elif attempts==0:
         print("You lost!")
         game_complete=True
+
 
 
 
