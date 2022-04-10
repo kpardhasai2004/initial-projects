@@ -44,7 +44,7 @@ menu={
     }
 }
 resources={"water":300,"milk":200,"coffee":100}
-needed=input("What do you want? (espresso/latte/cappuccion): ")
+needed=input("What do you want? (espresso/latte/cappuccino): ")
 if needed=="report":
     print(*[str(k) + '=' + str(v) for k,v in resources.items()], sep='\n')
 elif needed=="espresso":
@@ -65,7 +65,7 @@ elif needed=="latte":
         if menu["latte"]["cost"]<total:
             print("Change is refunded successfully!")
         if menu["latte"]["ingredients"]["water"] <= resources["water"] and menu["latte"]["ingredients"]["coffee"] <= resources["coffee"] and menu["latte"]["ingredients"]["milk"] <= resources["milk"]:
-            print("Here is your espresso.Thank you!")
+            print("Here is your latte.Thank you!")
             menu["latte"]["ingredients"]["water"] - resources["water"]
             menu["latte"]["ingredients"]["coffee"] - resources["coffee"]
             menu["latte"]["ingredients"]["milk"] - resources["milk"]
