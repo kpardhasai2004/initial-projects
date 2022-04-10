@@ -78,7 +78,7 @@ elif needed=="cappuccino":
         if menu["cappuccino"]["cost"]<total:
             print("Change is refunded successfully!")
         if menu["cappuccino"]["ingredients"]["water"] <= resources["water"] and menu["cappuccino"]["ingredients"]["coffee"] <= resources["coffee"] and menu["cappuccino"]["ingredients"]["milk"] <= resources["milk"]:
-            print("Here is your espresso.Thank you!")
+            print("Here is your cappucino.Thank you!")
             menu["cappuccino"]["ingredients"]["water"] - resources["water"]
             menu["cappuccino"]["ingredients"]["coffee"] - resources["coffee"]
             menu["cappuccino"]["ingredients"]["milk"] - resources["milk"]
