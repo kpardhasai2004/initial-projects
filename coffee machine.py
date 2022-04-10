@@ -44,47 +44,53 @@ menu={
     }
 }
 resources={"water":300,"milk":200,"coffee":100}
-needed=input("What do you want? (espresso/latte/cappuccino): ")
-if needed=="report":
-    print(*[str(k) + '=' + str(v) for k,v in resources.items()], sep='\n')
-elif needed=="espresso":
-    totmoney()
-    if menu["espresso"]["cost"]==total or  menu["espresso"]["cost"]<=total:
-        if menu["espresso"]["cost"]<total:
-            print("Change is refunded successfully!")
-        if menu["espresso"]["ingredients"]["water"] <= resources["water"] and menu["espresso"]["ingredients"]["coffee"] <= resources["coffee"]:
-            print("Here is your espresso.Thank you!")
-            menu["espresso"]["ingredients"]["water"] - resources["water"]
-            menu["espresso"]["ingredients"]["coffee"] - resources["coffee"]
-        else: print("Insufficent resources.")
-    if menu["espresso"]["cost"]>total:
-        print("Insufficent money!\nMoney refunded succefully.")
-elif needed=="latte":
-    totmoney()
-    if menu["latte"]["cost"]==total or menu["latte"]["cost"]<=total:
-        if menu["latte"]["cost"]<total:
-            print("Change is refunded successfully!")
-        if menu["latte"]["ingredients"]["water"] <= resources["water"] and menu["latte"]["ingredients"]["coffee"] <= resources["coffee"] and menu["latte"]["ingredients"]["milk"] <= resources["milk"]:
-            print("Here is your latte.Thank you!")
-            menu["latte"]["ingredients"]["water"] - resources["water"]
-            menu["latte"]["ingredients"]["coffee"] - resources["coffee"]
-            menu["latte"]["ingredients"]["milk"] - resources["milk"]
-    if menu["latte"]["cost"]>total:
-        print("Insufficent money!\nMoney refunded succefully.")
-    
-elif needed=="cappuccino":
-    totmoney()
-    if menu["cappuccino"]["cost"]==total or menu["cappuccino"]["cost"]<=total:
-        if menu["cappuccino"]["cost"]<total:
-            print("Change is refunded successfully!")
-        if menu["cappuccino"]["ingredients"]["water"] <= resources["water"] and menu["cappuccino"]["ingredients"]["coffee"] <= resources["coffee"] and menu["cappuccino"]["ingredients"]["milk"] <= resources["milk"]:
-            print("Here is your cappucino.Thank you!")
-            menu["cappuccino"]["ingredients"]["water"] - resources["water"]
-            menu["cappuccino"]["ingredients"]["coffee"] - resources["coffee"]
-            menu["cappuccino"]["ingredients"]["milk"] - resources["milk"]
-    if menu["cappuccino"]["cost"]>total:
-        print("Insufficent money!\nMoney refunded succefully.")
-elif needed!="report" or needed!="espresso" or needed!="latte" or needed!="cappuccino":
-    print("Please check the input!")
+run_the_machine=True
+while run_the_machine:
+    needed=input("What do you want? (espresso/latte/cappuccino): ")
+    if needed=="report":
+        print(*[str(k) + '=' + str(v) for k,v in resources.items()], sep='\n')
+    elif needed=="espresso":
+        totmoney()
+        if menu["espresso"]["cost"]==total or  menu["espresso"]["cost"]<=total:
+            if menu["espresso"]["cost"]<total:
+                print("Change is refunded successfully!")
+            if menu["espresso"]["ingredients"]["water"] <= resources["water"] and menu["espresso"]["ingredients"]["coffee"] <= resources["coffee"]:
+                print("Here is your espresso.Thank you!")
+                menu["espresso"]["ingredients"]["water"] - resources["water"]
+                menu["espresso"]["ingredients"]["coffee"] - resources["coffee"]
+            else: print("Insufficent resources.")
+        if menu["espresso"]["cost"]>total:
+            print("Insufficent money!\nMoney refunded succefully.")
+    elif needed=="latte":
+        totmoney()
+        if menu["latte"]["cost"]==total or menu["latte"]["cost"]<=total:
+            if menu["latte"]["cost"]<total:
+                print("Change is refunded successfully!")
+            if menu["latte"]["ingredients"]["water"] <= resources["water"] and menu["latte"]["ingredients"]["coffee"] <= resources["coffee"] and menu["latte"]["ingredients"]["milk"] <= resources["milk"]:
+                print("Here is your latte.Thank you!")
+                menu["latte"]["ingredients"]["water"] - resources["water"]
+                menu["latte"]["ingredients"]["coffee"] - resources["coffee"]
+                menu["latte"]["ingredients"]["milk"] - resources["milk"]
+        if menu["latte"]["cost"]>total:
+            print("Insufficent money!\nMoney refunded succefully.")
+        
+    elif needed=="cappuccino":
+        totmoney()
+        if menu["cappuccino"]["cost"]==total or menu["cappuccino"]["cost"]<=total:
+            if menu["cappuccino"]["cost"]<total:
+                print("Change is refunded successfully!")
+            if menu["cappuccino"]["ingredients"]["water"] <= resources["water"] and menu["cappuccino"]["ingredients"]["coffee"] <= resources["coffee"] and menu["cappuccino"]["ingredients"]["milk"] <= resources["milk"]:
+                print("Here is your espresso.Thank you!")
+                menu["cappuccino"]["ingredients"]["water"] - resources["water"]
+                menu["cappuccino"]["ingredients"]["coffee"] - resources["coffee"]
+                menu["cappuccino"]["ingredients"]["milk"] - resources["milk"]
+        if menu["cappuccino"]["cost"]>total:
+            print("Insufficent money!\nMoney refunded succefully.")
+    elif needed!="report" or needed!="espresso" or needed!="latte" or needed!="cappuccino":
+        print("Please check the input!")
+    ask_again=input("Do you want to order again? 'yes' or 'no': ")
+    if ask_again=="yes":
+        run_the_machine=True
+    else:run_the_machine=False
 
 
